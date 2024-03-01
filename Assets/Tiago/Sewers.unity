@@ -321,6 +321,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sewers
       objectReference: {fileID: 0}
+    - target: {fileID: 5661721708401302587, guid: 4667066bfd01d0640a9a81f430e5892f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 42.86
+      objectReference: {fileID: 0}
     - target: {fileID: 6821242442349330119, guid: 4667066bfd01d0640a9a81f430e5892f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
