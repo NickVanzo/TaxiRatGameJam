@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public int money = 0;
     public TextMeshProUGUI cheese;
     public Canvas canvas;
+    public GameObject player;
     
     void Start()
     {
@@ -35,7 +36,13 @@ public class GameManager : MonoBehaviour
         canvas.GetComponent<Timer>().remainingTime += 15;
         cheese.text = "" + money;
     }
-    
+
+    public void CheeseGet()
+    {
+        Destroy(GameObject.Find("Cheese"));
+        player.GetComponent<PlayerMovement>().playerVelocity = 25;
+    }
+
 
     void InstantiateCustomer()
     {

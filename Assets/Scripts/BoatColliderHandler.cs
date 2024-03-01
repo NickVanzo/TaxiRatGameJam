@@ -22,5 +22,10 @@ public class BoatColliderHandler : MonoBehaviour
         {
             Debug.Log("Ball hit");
         }
+        if (other.gameObject.CompareTag("Cheese"))
+        {
+            Debug.Log("CheeseGot");
+            gm.CheeseGet();
+        }
     }
 }
