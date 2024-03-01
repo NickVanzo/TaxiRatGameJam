@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     public void CheeseGet()
     {
         Destroy(GameObject.Find("Cheese Variant"));
-        player.GetComponent<PlayerMovement>().playerVelocity = 25;
+        player.GetComponent<PlayerMovement>().playerVelocity = 12;
         StartCoroutine(SpeedBoostDuration());
     }
 
