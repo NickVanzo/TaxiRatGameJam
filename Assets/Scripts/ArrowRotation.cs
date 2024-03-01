@@ -14,10 +14,17 @@ public class ArrowRotation : MonoBehaviour
     void Update()
     {
         GameObject arrival = GameObject.Find("Arrival (1)(Clone)");
+        GameObject customer = GameObject.Find("Customer(Clone)");
+
         if (arrival)
         {
             Vector3 direction = arrival.transform.position - transform.position;
             transform.rotation = Quaternion.LookRotation(direction, Vector3.up);    
+        }
+        if(customer)
+        {
+            Vector3 direction = customer.transform.position - transform.position;
+            transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
         }
         
     }

@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.891859, y: -1.0899982, z: 20.507069}
-  m_LocalScale: {x: 0.1, y: 0.09999998, z: 0.09999998}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -101,7 +101,7 @@ MonoBehaviour:
   destination: {x: 0, y: 0, z: 0}
   cheeseReward: 40
   timeIncreaseInSeconds: 30
-  rotationSpeed: 10
+  rotationSpeed: 15
 --- !u!65 &3346088171042621416
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -148,5 +148,5 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0

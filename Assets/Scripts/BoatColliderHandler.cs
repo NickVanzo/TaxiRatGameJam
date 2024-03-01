@@ -8,6 +8,7 @@ public class BoatColliderHandler : MonoBehaviour
     [SerializeField] private GameManager gm;
     private void OnCollisionEnter(Collision other)
     {
+        Debug.Log("HITTING");
         if (other.gameObject.CompareTag("Customer"))
         {
             gm.AssignCustomer();
