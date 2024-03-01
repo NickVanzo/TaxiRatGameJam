@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BoatColliderHandler : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class BoatColliderHandler : MonoBehaviour
         if(other.gameObject.CompareTag("Ball"))
         {
             Debug.Log("Ball hit");
+            SceneManager.LoadScene("MainMenu");
         }
         if (other.gameObject.CompareTag("Cheese"))
         {
