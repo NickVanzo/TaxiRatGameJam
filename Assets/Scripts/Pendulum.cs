@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class Pendulum : MonoBehaviour
 {
-    public float speed = 1.5f;
+    public float speed;
     public float limit = 75f;
     private float random = 0;
     
      void Awake()
     {
          random = Random.Range(0, 1f * 100);
+         speed = Random.Range(1, 5);
     }
     // Update is called once per frame
     void Update()
