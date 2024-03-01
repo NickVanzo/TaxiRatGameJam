@@ -39,8 +39,9 @@ public class GameManager : MonoBehaviour
 
     public void CheeseGet()
     {
-        Destroy(GameObject.Find("Cheese"));
+        Destroy(GameObject.Find("Cheese Variant"));
         player.GetComponent<PlayerMovement>().playerVelocity = 25;
+        StartCoroutine(SpeedBoostDuration());
     }
 
 
@@ -60,5 +61,12 @@ public class GameManager : MonoBehaviour
             arrivals[Random.Range(0, arrivals.Length)].transform.position,
             Quaternion.identity
         );
+    }
+
+    IEnumerator SpeedBoostDuration()
+    {
+        yield return new WaitForSeconds(5);
+        player.GetComponent<PlayerMovement>().playerVelocity = 10;
+
     }
 }
