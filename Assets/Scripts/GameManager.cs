@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -12,6 +13,8 @@ public class GameManager : MonoBehaviour
     public Customer currentCustomer;
     public Transform arrival;
     public int money = 0;
+    public TextMeshProUGUI cheese;
+    public Canvas canvas;
     
     void Start()
     {
@@ -29,6 +32,8 @@ public class GameManager : MonoBehaviour
         Destroy(GameObject.Find("Arrival (1)(Clone)"));
         InstantiateCustomer();
         money += 30;
+        canvas.GetComponent<Timer>().remainingTime += 15;
+        cheese.text = "" + money;
     }
     
 
