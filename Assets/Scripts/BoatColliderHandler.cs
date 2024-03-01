@@ -18,5 +18,9 @@ public class BoatColliderHandler : MonoBehaviour
         {
             gm.ArrivalReached();
         }
+        if(other.gameObject.CompareTag("Ball"))
+        {
+            Debug.Log("Ball hit");
+        }
     }
 }
