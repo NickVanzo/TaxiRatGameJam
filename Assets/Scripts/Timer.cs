@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
     public TextMeshProUGUI timer;
+    public GameObject backToMainMenu;
+    public GameObject player;
 
     public float remainingTime;
     // Update is called once per frame
@@ -19,7 +22,9 @@ public class Timer : MonoBehaviour
 
         if (remainingTime <= 0)
         {
-            SceneManager.LoadScene("MainMenu");
+            player.GetComponent<PlayerMovement>().playerVelocity = 0;
+            Cursor.visible = true;
+            backToMainMenu.SetActive(true);
         }
 
     }

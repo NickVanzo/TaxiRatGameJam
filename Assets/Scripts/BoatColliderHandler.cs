@@ -3,10 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class BoatColliderHandler : MonoBehaviour
 {
     [SerializeField] private GameManager gm;
+    public GameObject backToMainMenu;
+    public GameObject player;
     private void OnCollisionEnter(Collision other)
     {
         Debug.Log("HITTING");
@@ -22,7 +25,9 @@ public class BoatColliderHandler : MonoBehaviour
         if(other.gameObject.CompareTag("Ball"))
         {
             Debug.Log("Ball hit");
-            SceneManager.LoadScene("MainMenu");
+            player.GetComponent<PlayerMovement>().playerVelocity = 0;
+            Cursor.visible = true;
+            backToMainMenu.SetActive(true);
         }
         if (other.gameObject.CompareTag("Cheese"))
         {

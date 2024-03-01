@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI cheese;
     public Canvas canvas;
     public GameObject player;
+    private int numberOfArrivals = 0;
     
     void Start()
     {
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
     {
         Destroy(GameObject.Find("Arrival (1)(Clone)"));
         InstantiateCustomer();
+        numberOfArrivals--;
         money += 30;
         canvas.GetComponent<Timer>().remainingTime += 15;
         cheese.text = "" + money;
@@ -39,8 +41,7 @@ public class GameManager : MonoBehaviour
 
     public void CheeseGet()
     {
-        Destroy(GameObject.Find("Cheese Variant"));
-        player.GetComponent<PlayerMovement>().playerVelocity = 12;
+        player.GetComponent<PlayerMovement>().playerVelocity = 20;
         StartCoroutine(SpeedBoostDuration());
     }
 
@@ -56,11 +57,16 @@ public class GameManager : MonoBehaviour
 
     void InstantiateRandomArrival()
     {
-        Instantiate(
-            arrivalPrefab,
-            arrivals[Random.Range(0, arrivals.Length)].transform.position,
-            Quaternion.identity
-        );
+        if ( numberOfArrivals == 0 )
+        {
+            numberOfArrivals++;
+            Instantiate(
+          arrivalPrefab,
+          arrivals[Random.Range(0, arrivals.Length)].transform.position,
+          Quaternion.identity
+      );
+        }
+      
     }
 
     IEnumerator SpeedBoostDuration()
